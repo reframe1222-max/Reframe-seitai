@@ -1,0 +1,897 @@
+<!DOCTYPE html>
+<html lang="ja" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>やさしい整体院 | 痛みを忘れる、やさしい未来へ</title>
+    <meta name="description" content="どこに通っても良くならなかった慢性的な肩こり・腰痛に。痛みのないソフトな骨格調整で、根本から健やかな体を取り戻す、やさしい整体院です。">
+    
+    <!-- Tailwind CSS (CDN) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600;700&family=Noto+Sans+JP:wght@300;400;500;700&family=Noto+Serif+JP:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome (Icons) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Tailwind Config -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Noto Sans JP"', 'sans-serif'],
+                        serif: ['"Noto Serif JP"', 'serif'],
+                        en: ['"Jost"', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            blue: '#0077E6',       /* 誠実で明るい青（メインカラー） */
+                            lightBlue: '#EBF4FC',  /* 清潔感ある淡い青（背景・補助カラー） */
+                            deepBlue: '#0F172A',   /* テキスト・締め色用の深い紺色 */
+                            green: '#10B981',      /* アクセントとなる植物の緑（エメラルド） */
+                            lightGreen: '#ECFDF5', /* 淡い緑 */
+                            neutralText: '#334155' /* 読みやすい暗グレー */
+                        }
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-10px)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            font-feature-settings: "palt";
+            -webkit-font-smoothing: antialiased;
+            letter-spacing: 0.04em;
+        }
+
+        /* 自然な時間差フェードインのためのIntersection Observer用スタイル */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 1.2s cubic-bezier(0.19, 1, 0.22, 1), transform 1.2s cubic-bezier(0.19, 1, 0.22, 1);
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* 植物のあしらい用の細かなスタイル追加 */
+        .leaf-bg {
+            position: relative;
+        }
+        .leaf-bg::after {
+            content: "";
+            position: absolute;
+            background-repeat: no-repeat;
+            background-size: contain;
+            pointer-events: none;
+            opacity: 0.08;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-brand-neutralText font-sans overflow-x-hidden">
+
+    <!-- HEADER / NAVIGATION -->
+    <header class="fixed top-0 left-0 w-full bg-white/90 backdrop-blur-md border-b border-brand-lightBlue z-50 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-6 h-20 md:h-24 flex justify-between items-center">
+            <!-- ロゴエリア -->
+            <a href="#" class="flex items-center gap-3 group">
+                <div class="w-10 h-10 rounded-full bg-brand-lightBlue flex items-center justify-center text-brand-blue group-hover:scale-110 transition-transform duration-300">
+                    <i class="fa-solid fa-leaf text-lg text-brand-green"></i>
+                </div>
+                <div>
+                    <h1 class="text-xl md:text-2xl font-serif font-bold text-brand-deepBlue tracking-wide leading-none">やさしい整体院</h1>
+                    <span class="text-[10px] md:text-xs font-sans text-brand-blue tracking-widest uppercase mt-1 block">YASASHII SEITAI</span>
+                </div>
+            </a>
+
+            <!-- デスクトップメニュー -->
+            <nav class="hidden lg:flex items-center gap-8 text-sm font-medium">
+                <a href="#strengths" class="text-brand-deepBlue hover:text-brand-blue transition-colors">当院の特徴</a>
+                <a href="#story" class="text-brand-deepBlue hover:text-brand-blue transition-colors">院長の想い</a>
+                <a href="#offer" class="text-brand-deepBlue hover:text-brand-blue transition-colors">初回限定特典</a>
+                <a href="#flow" class="text-brand-deepBlue hover:text-brand-blue transition-colors">施術の流れ</a>
+                <a href="#testimonials" class="text-brand-deepBlue hover:text-brand-blue transition-colors">お客様の声</a>
+                <a href="#faq" class="text-brand-deepBlue hover:text-brand-blue transition-colors">よくある質問</a>
+                <a href="#access" class="text-brand-deepBlue hover:text-brand-blue transition-colors">アクセス</a>
+            </nav>
+
+            <!-- 右側CTAボタン -->
+            <div class="hidden lg:flex items-center gap-4">
+                <a href="tel:000-000-000" class="flex items-center gap-2 text-brand-deepBlue font-bold hover:text-brand-blue transition-colors">
+                    <i class="fa-solid fa-phone text-brand-blue"></i>
+                    <span>相談・電話予約</span>
+                </a>
+                <a href="#offer" class="px-6 py-3 bg-brand-green text-white font-bold rounded-full hover:bg-emerald-600 transition-all shadow-md shadow-emerald-200">
+                    <i class="fa-brands fa-line mr-2"></i>LINEで相談・予約
+                </a>
+            </div>
+
+            <!-- モバイルメニュー用ハンバーガーボタン -->
+            <button id="menu-btn" class="lg:hidden p-2 text-brand-deepBlue focus:outline-none" aria-label="メニューを開閉する">
+                <i class="fa-solid fa-bars text-2xl"></i>
+            </button>
+        </div>
+
+        <!-- モバイルメニュー展開エリア -->
+        <div id="mobile-menu" class="hidden lg:hidden fixed top-20 left-0 w-full bg-white border-b border-brand-lightBlue shadow-lg z-40 transition-all duration-300">
+            <nav class="flex flex-col p-6 gap-4 text-base font-semibold">
+                <a href="#strengths" class="text-brand-deepBlue py-2 border-b border-slate-100 mobile-link">当院の特徴</a>
+                <a href="#story" class="text-brand-deepBlue py-2 border-b border-slate-100 mobile-link">院長の想い</a>
+                <a href="#offer" class="text-brand-deepBlue py-2 border-b border-slate-100 mobile-link">初回限定特典</a>
+                <a href="#flow" class="text-brand-deepBlue py-2 border-b border-slate-100 mobile-link">施術の流れ</a>
+                <a href="#testimonials" class="text-brand-deepBlue py-2 border-b border-slate-100 mobile-link">お客様の声</a>
+                <a href="#faq" class="text-brand-deepBlue py-2 border-b border-slate-100 mobile-link">よくある質問</a>
+                <a href="#access" class="text-brand-deepBlue py-2 mobile-link">アクセス</a>
+                <div class="flex flex-col gap-3 mt-4">
+                    <a href="tel:000-000-000" class="w-full py-3 bg-brand-lightBlue text-brand-blue font-bold rounded-full text-center hover:bg-blue-100 transition-colors">
+                        <i class="fa-solid fa-phone mr-2"></i>電話でお問い合わせ
+                    </a>
+                    <a href="#offer" class="w-full py-3 bg-brand-green text-white font-bold rounded-full text-center hover:bg-emerald-600 transition-colors shadow-md shadow-emerald-200 mobile-link">
+                        <i class="fa-brands fa-line mr-2"></i>LINEで今すぐ予約
+                    </a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- HERO SECTION (メインビジュアル) -->
+    <section class="relative min-h-[90vh] lg:min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-white via-brand-lightBlue to-brand-lightGreen pt-24 pb-16">
+        <!-- 植物の装飾イメージ（背景） -->
+        <div class="absolute -top-12 -left-12 w-48 h-48 bg-brand-green/10 rounded-full blur-3xl pointer-events-none"></div>
+        <div class="absolute bottom-10 right-10 w-72 h-72 bg-brand-blue/10 rounded-full blur-3xl pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-6 w-full grid grid-cols-1 lg:grid-cols-12 gap-12 items-center relative z-10">
+            <!-- テキストエリア -->
+            <div class="lg:col-span-7 space-y-8 text-center lg:text-left">
+                <!-- 誠実かつ安心感を誘うアイキャッチタグ -->
+                <div class="inline-flex items-center gap-2 px-4 py-2 bg-white/80 border border-brand-blue/20 rounded-full text-brand-blue text-xs md:text-sm font-semibold shadow-sm backdrop-blur-sm">
+                    <i class="fa-solid fa-circle-check text-brand-green"></i>
+                    <span>痛くない優しい施術・完全予約制でじっくり対応</span>
+                </div>
+
+                <div class="space-y-4">
+                    <h2 class="text-3xl md:text-5xl lg:text-6xl font-serif font-bold text-brand-deepBlue leading-snug md:leading-tight">
+                        痛みを忘れる、<br class="hidden md:block">
+                        <span class="text-brand-blue relative inline-block">
+                            やさしい未来
+                            <span class="absolute bottom-1 left-0 w-full h-3 bg-brand-lightBlue/70 -z-10"></span>
+                        </span>へ。
+                    </h2>
+                    <p class="text-lg md:text-2xl font-serif text-brand-neutralText font-medium">
+                        その場しのぎの湿布や薬は、<br class="md:hidden">もう終わりにしませんか？
+                    </p>
+                </div>
+
+                <div class="max-w-xl mx-auto lg:mx-0">
+                    <p class="text-sm md:text-base leading-relaxed text-slate-600">
+                        どこに通っても良くならなかった慢性的な肩こり・腰痛に。当院は無理なボキボキ整体は行いません。眠ってしまうほどソフトな調整で、お体の歪みを整えて、この先もっと悪くなる不安を根本から取り除きます。
+                    </p>
+                </div>
+
+                <!-- LP特典誘導つきCTAボタン -->
+                <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start pt-2">
+                    <a href="#offer" class="group relative px-8 py-5 bg-brand-green text-white font-bold rounded-full text-center hover:bg-emerald-600 hover:scale-[1.02] active:scale-95 transition-all shadow-xl shadow-emerald-200">
+                        <div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-yellow-400 text-brand-deepBlue text-[10px] font-bold px-3 py-0.5 rounded-full tracking-widest whitespace-nowrap animate-bounce">
+                            まずは特別体験から
+                        </div>
+                        <i class="fa-brands fa-line mr-2 text-lg"></i>LINEで簡単ネット予約
+                    </a>
+                    <a href="tel:000-000-000" class="px-8 py-5 bg-white border border-slate-200 text-brand-deepBlue font-bold rounded-full text-center hover:bg-slate-50 hover:border-slate-300 transition-all flex items-center justify-center gap-2 shadow-sm">
+                        <i class="fa-solid fa-phone text-brand-blue"></i>
+                        <span>お電話でのご予約・相談</span>
+                    </a>
+                </div>
+
+                <!-- 信頼実績パーツ -->
+                <div class="grid grid-cols-3 gap-4 border-t border-slate-200/60 pt-8 max-w-md mx-auto lg:mx-0">
+                    <div class="text-center lg:text-left">
+                        <p class="text-2xl md:text-3xl font-en font-bold text-brand-blue">98.2%</p>
+                        <p class="text-xs text-slate-500 font-medium">施術満足度</p>
+                    </div>
+                    <div class="text-center lg:text-left border-x border-slate-200">
+                        <p class="text-2xl md:text-3xl font-en font-bold text-brand-blue">10,000人+</p>
+                        <p class="text-xs text-slate-500 font-medium">累計施術実績</p>
+                    </div>
+                    <div class="text-center lg:text-left">
+                        <p class="text-2xl md:text-3xl font-en font-bold text-brand-blue">1対1</p>
+                        <p class="text-xs text-slate-500 font-medium">専任カウンセリング</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- メインビジュアル画像エリア -->
+            <div class="lg:col-span-5 relative mt-6 lg:mt-0 flex justify-center">
+                <div class="w-full max-w-md relative">
+                    <!-- アクセントの植物・サークル装飾 -->
+                    <div class="absolute -right-8 -bottom-8 w-32 h-32 bg-brand-lightGreen border-4 border-white rounded-full flex items-center justify-center -z-10 shadow-lg animate-float">
+                        <i class="fa-solid fa-leaf text-4xl text-brand-green"></i>
+                    </div>
+                    
+                    <!-- REPLACE: 施術写真（Unsplash Source ヒーロー用） -->
+                    <div class="rounded-[2.5rem] overflow-hidden shadow-2xl border-4 border-white aspect-[3/4] bg-white">
+                        <img src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?q=80&w=1200&auto=format&fit=crop" alt="やさしい整体院の温かみのある施術空間" class="w-full h-full object-cover">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 1: STRENGTHS (選ばれる3つの理由) -->
+    <section id="strengths" class="py-24 bg-white relative">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center max-w-3xl mx-auto mb-20 space-y-4">
+                <div class="inline-flex items-center gap-2 px-3 py-1 bg-brand-lightBlue rounded-full text-brand-blue text-xs font-bold tracking-widest uppercase">
+                    Our Strengths
+                </div>
+                <h3 class="text-3xl md:text-4xl font-serif font-bold text-brand-deepBlue leading-snug">
+                    なぜ「やさしい整体院」で<br class="md:hidden">あなたの悩みが根本改善するのか？
+                </h3>
+                <p class="text-sm md:text-base text-slate-500">
+                    その場しのぎのマッサージや強いマッサージは逆効果。当院独自の、心も休まる優しいアプローチをご紹介します。
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- 理由1 -->
+                <div class="reveal bg-slate-50 rounded-3xl p-8 border border-slate-100 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between">
+                    <div class="space-y-6">
+                        <div class="w-14 h-14 rounded-2xl bg-brand-lightGreen flex items-center justify-center text-brand-green text-xl font-bold font-en">
+                            01
+                        </div>
+                        <div class="space-y-3">
+                            <h4 class="text-xl font-serif font-bold text-brand-deepBlue">ボキボキしない、<br>眠ってしまうような無痛調整</h4>
+                            <p class="text-sm leading-relaxed text-slate-500">
+                                お体に強い力をかけるような痛い施術は一切行いません。眠ってしまうほどソフトで心地よい調整で、敏感なお体にも優しく深くアプローチし、全身を安全に緩めます。
+                            </p>
+                        </div>
+                    </div>
+                    <!-- REPLACE: 優しい施術写真 -->
+                    <div class="mt-8 rounded-2xl overflow-hidden aspect-video bg-white shadow-sm border border-slate-100">
+                        <img src="https://images.unsplash.com/photo-1600334089648-b0d9d3028eb2?q=80&w=600&auto=format&fit=crop" alt="ボキボキしない優しい施術の様子" class="w-full h-full object-cover">
+                    </div>
+                </div>
+
+                <!-- 理由2 -->
+                <div class="reveal bg-slate-50 rounded-3xl p-8 border border-slate-100 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between" style="transition-delay: 150ms;">
+                    <div class="space-y-6">
+                        <div class="w-14 h-14 rounded-2xl bg-brand-lightBlue flex items-center justify-center text-brand-blue text-xl font-bold font-en">
+                            02
+                        </div>
+                        <div class="space-y-3">
+                            <h4 class="text-xl font-serif font-bold text-brand-deepBlue">徹底的に原因を究明する<br>丁寧なカウンセリング</h4>
+                            <p class="text-sm leading-relaxed text-slate-500">
+                                あなたの不調の本当の原因はどこから来ているのか？ただもみほぐすのではなく、日常生活や骨盤・筋肉の状態から本当の歪みの原因を特定し、丁寧にご説明します。
+                            </p>
+                        </div>
+                    </div>
+                    <!-- REPLACE: カウンセリング写真 -->
+                    <div class="mt-8 rounded-2xl overflow-hidden aspect-video bg-white shadow-sm border border-slate-100">
+                        <img src="https://images.unsplash.com/photo-1516549655169-df83a0774514?q=80&w=600&auto=format&fit=crop" alt="丁寧な問診・カウンセリングの様子" class="w-full h-full object-cover">
+                    </div>
+                </div>
+
+                <!-- 理由3 -->
+                <div class="reveal bg-slate-50 rounded-3xl p-8 border border-slate-100 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between" style="transition-delay: 300ms;">
+                    <div class="space-y-6">
+                        <div class="w-14 h-14 rounded-2xl bg-brand-lightGreen flex items-center justify-center text-brand-green text-xl font-bold font-en">
+                            03
+                        </div>
+                        <div class="space-y-3">
+                            <h4 class="text-xl font-serif font-bold text-brand-deepBlue">再発を防ぎ日常を支える<br>オーダーメイドのセルフケア</h4>
+                            <p class="text-sm leading-relaxed text-slate-500">
+                                施術だけでは元に戻ってしまうことも。当院では自宅でも簡単に続けられる優しい姿勢指導やストレッチをお伝えし、一生もののぶり返さないお体を目指します。
+                            </p>
+                        </div>
+                    </div>
+                    <!-- REPLACE: セルフケア写真 -->
+                    <div class="mt-8 rounded-2xl overflow-hidden aspect-video bg-white shadow-sm border border-slate-100">
+                        <img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?q=80&w=600&auto=format&fit=crop" alt="ストレッチやセルフケアのレッスン" class="w-full h-full object-cover">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 2: STORY (院長の想い) -->
+    <section id="story" class="py-24 bg-brand-lightBlue/40 relative">
+        <div class="absolute inset-y-0 right-0 w-1/3 bg-white/40 skew-x-12 -z-10"></div>
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
+                <!-- 左側：院長先生の優しさあふれる写真 -->
+                <div class="lg:col-span-5 relative flex justify-center reveal">
+                    <div class="w-full max-w-sm relative">
+                        <div class="absolute -top-6 -left-6 w-32 h-32 bg-brand-green/10 rounded-full blur-2xl pointer-events-none"></div>
+                        <!-- REPLACE: 院長写真 -->
+                        <div class="rounded-3xl overflow-hidden shadow-2xl border-4 border-white aspect-[3/4] bg-white">
+                            <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?q=80&w=1200&auto=format&fit=crop" alt="やさしい整体院 院長 佐藤健一" class="w-full h-full object-cover">
+                        </div>
+                        <div class="absolute -bottom-6 -right-6 bg-white border border-brand-lightBlue p-4 rounded-2xl shadow-xl flex items-center gap-3">
+                            <i class="fa-solid fa-heart text-2xl text-red-400"></i>
+                            <div>
+                                <p class="text-xs text-slate-500 font-bold">私の目指す整体院</p>
+                                <p class="text-sm font-serif font-bold text-brand-deepBlue">「最後の砦」として寄り添う</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 右側：ストーリー・文章 -->
+                <div class="lg:col-span-7 space-y-8 reveal" style="transition-delay: 150ms;">
+                    <div class="space-y-4">
+                        <div class="inline-flex items-center gap-2 px-3 py-1 bg-brand-lightGreen rounded-full text-brand-green text-xs font-bold tracking-widest uppercase">
+                            Our Story
+                        </div>
+                        <h3 class="text-3xl md:text-4xl font-serif font-bold text-brand-deepBlue leading-snug">
+                            「このままずっと良くならないのでは…」<br class="hidden md:block">
+                            そんな将来の不安を抱えるあなたへ。
+                        </h3>
+                    </div>
+
+                    <div class="space-y-6 text-slate-600 leading-relaxed text-sm md:text-base">
+                        <p>
+                            はじめまして。「やさしい整体院」院長の佐藤です。<br>
+                            かつて私自身も、激しい慢性的な腰痛に悩まされ、「この先もっと悪くなったら仕事もできなくなるのでは…」という深い不安に怯え続けた経験があります。
+                        </p>
+                        <p>
+                            病院を渡り歩き、痛み止めや湿布でごまかす毎日。だからこそ、今この記事を読んでいるあなたが抱えている「あきらめ」と「将来への怖さ」が誰よりも分かります。
+                        </p>
+                        <p>
+                            骨格が歪んだ状態で、ただ筋肉を強くもみほぐしても、体は防御反応を起こしてさらに硬くなってしまいます。本当に必要なのは、全身の緊張をやさしく解きほぐし、骨格が自然と正しい位置に戻るような<strong class="text-brand-blue font-bold">「安心で安全な優しいアプローチ」</strong>だったのです。
+                        </p>
+                        <p>
+                            私は施術技術だけでなく、「ここに来たら、心からホッとできる」そんな優しくて安心感に満ちた場所を作りたいという想いで当院を立ち上げました。一時しのぎではなく、この先の人生を笑顔で、不安なく過ごしていただくために。最後まで私が責任を持って寄り添い続けます。
+                        </p>
+                    </div>
+
+                    <div class="pt-4 border-t border-slate-200/60">
+                        <p class="font-serif text-lg font-bold text-brand-deepBlue">やさしい整体院 院長</p>
+                        <p class="text-2xl font-serif font-bold text-brand-blue mt-1">佐藤 健一 <span class="text-xs text-slate-500 font-sans font-normal ml-2">Kenichi Sato</span></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 3: FIRST-TIME OFFER (初回限定体験メニュー) -->
+    <section id="offer" class="py-24 bg-gradient-to-b from-white to-brand-lightBlue relative">
+        <div class="max-w-4xl mx-auto px-6">
+            <div class="bg-white rounded-[2.5rem] border border-brand-lightBlue shadow-2xl overflow-hidden relative reveal">
+                <!-- 緑の植物のイラスト的なアイキャッチ -->
+                <div class="absolute -top-10 -right-10 w-32 h-32 bg-brand-green/5 rounded-full blur-xl pointer-events-none"></div>
+
+                <!-- キャンペーン・お買い得バナー -->
+                <div class="bg-gradient-to-r from-brand-blue to-cyan-500 text-white text-center py-4 px-6">
+                    <p class="text-sm md:text-base font-bold tracking-wider">
+                        <i class="fa-solid fa-gift mr-2"></i>【毎月限定15名】根本改善プレミアム体験キャンペーン
+                    </p>
+                </div>
+
+                <div class="p-8 md:p-12 space-y-8 text-center">
+                    <div class="space-y-3">
+                        <h4 class="text-2xl md:text-4xl font-serif font-bold text-brand-deepBlue">
+                            まずは効果をお試しください
+                        </h4>
+                        <p class="text-xs md:text-sm font-semibold text-brand-green tracking-widest uppercase">
+                            初回限定：根本改善プレミアム整体コース（60分）
+                        </p>
+                    </div>
+
+                    <!-- 価格提示エリア -->
+                    <div class="flex flex-col md:flex-row items-center justify-center gap-4 bg-slate-50 rounded-2xl p-6 border border-slate-100 max-w-xl mx-auto">
+                        <div class="text-slate-400 line-through text-base md:text-lg">
+                            通常料金 13,200円（税込）
+                        </div>
+                        <div class="hidden md:block text-slate-300 text-2xl">→</div>
+                        <div class="flex items-baseline gap-1">
+                            <span class="text-xs font-bold text-brand-blue">初回特別価格</span>
+                            <span class="text-4xl md:text-5xl font-serif font-bold text-brand-blue">4,980</span>
+                            <span class="text-sm font-bold text-brand-blue">円（税込）</span>
+                        </div>
+                    </div>
+
+                    <!-- 納得させる説明 -->
+                    <div class="max-w-xl mx-auto text-left space-y-4 text-xs md:text-sm text-slate-500 border-l-4 border-brand-green pl-4">
+                        <h5 class="font-bold text-brand-deepBlue">なぜ、初回体験の特別割引価格を設けているのか？</h5>
+                        <p>
+                            それは、「本気で痛みに悩んでいて、どこに通っても改善しなかった方」に、もうこれ以上お金と時間を無駄にしてほしくないからです。本当に私の施術が自分に合うかどうか、まずは安心してお試しいただき、確かな変化を感じてほしいと願っています。
+                        </p>
+                    </div>
+
+                    <!-- 今すぐご予約エリア -->
+                    <div class="space-y-4 max-w-md mx-auto">
+                        <a href="https://line.me" target="_blank" rel="noopener noreferrer" class="group flex items-center justify-center gap-3 w-full py-5 bg-brand-green hover:bg-emerald-600 text-white font-bold rounded-full text-center text-lg shadow-xl shadow-emerald-200 hover:scale-[1.01] active:scale-95 transition-all">
+                            <i class="fa-brands fa-line text-2xl"></i>
+                            <span>LINEから24時間かんたん予約</span>
+                        </a>
+                        <p class="text-xs text-slate-400">※お友だち登録後、すぐに自動案内でお好きな日時を選べます</p>
+                        
+                        <div class="flex items-center justify-center gap-3 py-2 text-slate-300">
+                            <span class="w-12 h-[1px] bg-slate-200"></span>
+                            <span class="text-xs text-slate-500 font-bold">お急ぎの方はお電話で</span>
+                            <span class="w-12 h-[1px] bg-slate-200"></span>
+                        </div>
+
+                        <a href="tel:000-000-000" class="flex items-center justify-center gap-2 text-2xl font-en font-bold text-brand-blue hover:text-blue-700 transition-colors">
+                            <i class="fa-solid fa-phone-volume"></i>
+                            <span>000-000-000</span>
+                        </a>
+                        <p class="text-[10px] text-slate-400">受付時間 9:00〜20:00（水曜・祝日を除く）</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 4: FLOW (ご来店・施術の流れ) -->
+    <section id="flow" class="py-24 bg-white relative">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center max-w-3xl mx-auto mb-20 space-y-4">
+                <div class="inline-flex items-center gap-2 px-3 py-1 bg-brand-lightBlue rounded-full text-brand-blue text-xs font-bold tracking-widest uppercase">
+                    Step Flow
+                </div>
+                <h3 class="text-3xl md:text-4xl font-serif font-bold text-brand-deepBlue leading-snug">
+                    ご来店からお帰りまでの流れ
+                </h3>
+                <p class="text-sm md:text-base text-slate-500">
+                    不安のない丁寧な対応を心がけております。リラックスしてお越しください。
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <!-- ステップ1 -->
+                <div class="reveal relative space-y-6">
+                    <div class="relative rounded-3xl overflow-hidden aspect-video shadow-md border border-slate-100 bg-slate-50">
+                        <!-- REPLACE: 受付写真 -->
+                        <img src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?q=80&w=600&auto=format&fit=crop" alt="丁寧にお出迎えする受付の様子" class="w-full h-full object-cover">
+                        <div class="absolute top-4 left-4 bg-brand-blue text-white w-8 h-8 rounded-full flex items-center justify-center font-bold text-sm">
+                            1
+                        </div>
+                    </div>
+                    <div class="space-y-2">
+                        <h4 class="text-lg font-serif font-bold text-brand-deepBlue">ご来院・お出迎え</h4>
+                        <p class="text-sm text-slate-500 leading-relaxed">
+                            明るく清潔な院内にて、優しくスタッフがお出迎えいたします。問診票にお体の調子をご記入いただきます。
+                        </p>
+                    </div>
+                    <div class="hidden md:block absolute top-1/2 -right-4 -translate-y-12 text-slate-300 text-xl">
+                        <i class="fa-solid fa-chevron-right"></i>
+                    </div>
+                </div>
+
+                <!-- ステップ2 -->
+                <div class="reveal relative space-y-6" style="transition-delay: 150ms;">
+                    <div class="relative rounded-3xl overflow-hidden aspect-video shadow-md border border-slate-100 bg-slate-50">
+                        <!-- REPLACE: カウンセリング写真 -->
+                        <img src="https://images.unsplash.com/photo-1516549655169-df83a0774514?q=80&w=600&auto=format&fit=crop" alt="お悩みをじっくりヒアリングするカウンセリング" class="w-full h-full object-cover">
+                        <div class="absolute top-4 left-4 bg-brand-blue text-white w-8 h-8 rounded-full flex items-center justify-center font-bold text-sm">
+                            2
+                        </div>
+                    </div>
+                    <div class="space-y-2">
+                        <h4 class="text-lg font-serif font-bold text-brand-deepBlue">カウンセリングと検査</h4>
+                        <p class="text-sm text-slate-500 leading-relaxed">
+                            どんな些細なお悩みもお聞きします。現在の関節の動きや姿勢、日常生活のクセを確認してお体の問題を探ります。
+                        </p>
+                    </div>
+                    <div class="hidden md:block absolute top-1/2 -right-4 -translate-y-12 text-slate-300 text-xl">
+                        <i class="fa-solid fa-chevron-right"></i>
+                    </div>
+                </div>
+
+                <!-- ステップ3 -->
+                <div class="reveal relative space-y-6" style="transition-delay: 300ms;">
+                    <div class="relative rounded-3xl overflow-hidden aspect-video shadow-md border border-slate-100 bg-slate-50">
+                        <!-- REPLACE: 施術写真 -->
+                        <img src="https://images.unsplash.com/photo-1600334089648-b0d9d3028eb2?q=80&w=600&auto=format&fit=crop" alt="痛みのない丁寧な施術" class="w-full h-full object-cover">
+                        <div class="absolute top-4 left-4 bg-brand-blue text-white w-8 h-8 rounded-full flex items-center justify-center font-bold text-sm">
+                            3
+                        </div>
+                    </div>
+                    <div class="space-y-2">
+                        <h4 class="text-lg font-serif font-bold text-brand-deepBlue">やさしく負担のない施術</h4>
+                        <p class="text-sm text-slate-500 leading-relaxed">
+                            痛くない心地よい刺激で、硬くなった筋肉や歪んだ骨盤を根本から丁寧に整えます。驚くほど全身がすっと軽くなります。
+                        </p>
+                    </div>
+                    <div class="hidden md:block absolute top-1/2 -right-4 -translate-y-12 text-slate-300 text-xl">
+                        <i class="fa-solid fa-chevron-right"></i>
+                    </div>
+                </div>
+
+                <!-- ステップ4 -->
+                <div class="reveal relative space-y-6" style="transition-delay: 450ms;">
+                    <div class="relative rounded-3xl overflow-hidden aspect-video shadow-md border border-slate-100 bg-slate-50">
+                        <!-- REPLACE: セルフケア指導 -->
+                        <img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?q=80&w=600&auto=format&fit=crop" alt="今後の過ごし方についてセルフケアのアドバイス" class="w-full h-full object-cover">
+                        <div class="absolute top-4 left-4 bg-brand-blue text-white w-8 h-8 rounded-full flex items-center justify-center font-bold text-sm">
+                            4
+                        </div>
+                    </div>
+                    <div class="space-y-2">
+                        <h4 class="text-lg font-serif font-bold text-brand-deepBlue">お体の説明とケア方法</h4>
+                        <p class="text-sm text-slate-500 leading-relaxed">
+                            歪みの原因について分かりやすくお伝えし、再発を防ぐための優しいストレッチやセルフケア方法を説明してお帰りです。
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 5: CUSTOMER TESTIMONIALS (お客様のビフォーアフター・声) -->
+    <section id="testimonials" class="py-24 bg-brand-lightBlue/40 relative">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center max-w-3xl mx-auto mb-20 space-y-4">
+                <div class="inline-flex items-center gap-2 px-3 py-1 bg-brand-lightGreen rounded-full text-brand-green text-xs font-bold tracking-widest uppercase">
+                    Voice & Results
+                </div>
+                <h3 class="text-3xl md:text-4xl font-serif font-bold text-brand-deepBlue leading-snug">
+                    喜びの声が届いています
+                </h3>
+                <p class="text-sm md:text-base text-slate-500">
+                    痛みを克服し、笑顔を取り戻された方々の一部をご紹介します。
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+                <!-- 口コミ1 -->
+                <div class="reveal bg-white rounded-3xl p-8 border border-slate-100 shadow-lg flex flex-col md:flex-row gap-6 items-start">
+                    <!-- REPLACE: お客様写真 -->
+                    <div class="w-24 h-24 rounded-full overflow-hidden border-2 border-brand-lightBlue flex-shrink-0 bg-slate-50">
+                        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=200&auto=format&fit=crop" alt="お客様のご感想（女性）" class="w-full h-full object-cover">
+                    </div>
+                    <div class="space-y-4 flex-1">
+                        <div class="flex items-center gap-1 text-yellow-400">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <h4 class="text-lg font-serif font-bold text-brand-deepBlue">「あんなに手放せなかった薬や湿布を、今は全く飲んでいません！」</h4>
+                        <p class="text-xs text-brand-blue font-bold">高橋様 / 40代 / デスクワーク</p>
+                        <p class="text-sm leading-relaxed text-slate-500">
+                            10年以上慢性的な肩こりに悩み、ずっと痛み止めを飲み続けていました。ポキポキしない優しい施術なのに、数回通うだけで背中と肩がすっと軽くなり、この先もっと痛みが悪化したらという不安も消え去りました。
+                        </p>
+                    </div>
+                </div>
+
+                <!-- 口コミ2 -->
+                <div class="reveal bg-white rounded-3xl p-8 border border-slate-100 shadow-lg flex flex-col md:flex-row gap-6 items-start" style="transition-delay: 150ms;">
+                    <!-- REPLACE: お客様写真 -->
+                    <div class="w-24 h-24 rounded-full overflow-hidden border-2 border-brand-lightBlue flex-shrink-0 bg-slate-50">
+                        <img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?q=80&w=200&auto=format&fit=crop" alt="お客様のご感想（主婦）" class="w-full h-full object-cover">
+                    </div>
+                    <div class="space-y-4 flex-1">
+                        <div class="flex items-center gap-1 text-yellow-400">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <h4 class="text-lg font-serif font-bold text-brand-deepBlue">「もう良くならないと諦めていた腰痛が劇的に軽くなりました」</h4>
+                        <p class="text-xs text-brand-blue font-bold">佐藤様 / 50代 / 主婦</p>
+                        <p class="text-sm leading-relaxed text-slate-500">
+                            家事や庭いじりをするのも辛く、どこに行っても良くならなかったため将来が不安でした。やさしい整体院さんは、時間をかけて丁寧にお話を聞いてくださり、安心してお任せできました。毎日が楽しくなりました！
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 6: FAQ (よくある質問) -->
+    <section id="faq" class="py-24 bg-white relative">
+        <div class="max-w-4xl mx-auto px-6">
+            <div class="text-center max-w-3xl mx-auto mb-20 space-y-4">
+                <div class="inline-flex items-center gap-2 px-3 py-1 bg-brand-lightBlue rounded-full text-brand-blue text-xs font-bold tracking-widest uppercase">
+                    Common Questions
+                </div>
+                <h3 class="text-3xl md:text-4xl font-serif font-bold text-brand-deepBlue leading-snug">
+                    よくある質問
+                </h3>
+                <p class="text-sm md:text-base text-slate-500">
+                    少しでも不安を和らげていただけるよう、多くいただく疑問にお答えします。
+                </p>
+            </div>
+
+            <!-- アコーディオン -->
+            <div class="space-y-4">
+                <!-- Q1 -->
+                <div class="border border-slate-100 rounded-2xl overflow-hidden shadow-sm transition-all duration-300">
+                    <button class="faq-toggle w-full flex justify-between items-center p-6 text-left hover:bg-slate-50/50 transition-colors">
+                        <span class="font-serif font-bold text-brand-deepBlue text-base md:text-lg flex items-center gap-3">
+                            <span class="text-brand-blue text-xl font-en">Q.</span>
+                            整体は痛くありませんか？本当にボキボキしませんか？
+                        </span>
+                        <i class="fa-solid fa-chevron-down text-slate-400 transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-content max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
+                        <p class="p-6 border-t border-slate-100 text-sm md:text-base text-slate-500 leading-relaxed bg-slate-50">
+                            はい、ご安心ください。当院では「やさしい」施術を最優先に設計しております。ボキボキと強い衝撃を加えたり、無理にお体をひねったりする手法は一切行いません。眠ってしまわれる方がほとんどの、優しく心地よい調整ですので、安心してお任せください。
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Q2 -->
+                <div class="border border-slate-100 rounded-2xl overflow-hidden shadow-sm transition-all duration-300">
+                    <button class="faq-toggle w-full flex justify-between items-center p-6 text-left hover:bg-slate-50/50 transition-colors">
+                        <span class="font-serif font-bold text-brand-deepBlue text-base md:text-lg flex items-center gap-3">
+                            <span class="text-brand-blue text-xl font-en">Q.</span>
+                            何回くらい通えば、慢性的な症状が良くなりますか？
+                        </span>
+                        <i class="fa-solid fa-chevron-down text-slate-400 transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-content max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
+                        <p class="p-6 border-t border-slate-100 text-sm md:text-base text-slate-500 leading-relaxed bg-slate-50">
+                            お体の歪みの程度や慢性化していた期間によって異なりますが、ほとんどの方が1回目で変化やお体の軽さを実感されます。長年蓄積された歪みを根本から正しい状態で定着させるために、まずは目安として3〜5回ほど間隔を詰めて通院されることをおすすめしております。
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Q3 -->
+                <div class="border border-slate-100 rounded-2xl overflow-hidden shadow-sm transition-all duration-300">
+                    <button class="faq-toggle w-full flex justify-between items-center p-6 text-left hover:bg-slate-50/50 transition-colors">
+                        <span class="font-serif font-bold text-brand-deepBlue text-base md:text-lg flex items-center gap-3">
+                            <span class="text-brand-blue text-xl font-en">Q.</span>
+                            どのような服装で行けばいいですか？着替えはありますか？
+                        </span>
+                        <i class="fa-solid fa-chevron-down text-slate-400 transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-content max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
+                        <p class="p-6 border-t border-slate-100 text-sm md:text-base text-slate-500 leading-relaxed bg-slate-50">
+                            動きやすく柔らかい服装（Tシャツやトレーナー、ゆとりのあるパンツ、スウェットなど）でお越しください。スカートや体を締め付けるかたいジーンズなどは避けていただけますと幸いです。お仕事帰りでも安心してお越しいただけるよう、無料のお着替えも用意しております。
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Q4 -->
+                <div class="border border-slate-100 rounded-2xl overflow-hidden shadow-sm transition-all duration-300">
+                    <button class="faq-toggle w-full flex justify-between items-center p-6 text-left hover:bg-slate-50/50 transition-colors">
+                        <span class="font-serif font-bold text-brand-deepBlue text-base md:text-lg flex items-center gap-3">
+                            <span class="text-brand-blue text-xl font-en">Q.</span>
+                            完全予約制ですか？LINEではなく電話でも予約できますか？
+                        </span>
+                        <i class="fa-solid fa-chevron-down text-slate-400 transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-content max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
+                        <p class="p-6 border-t border-slate-100 text-sm md:text-base text-slate-500 leading-relaxed bg-slate-50">
+                            はい、当院は「一対一の空間で丁寧にお悩みに向き合う」ため、完全予約制としております。24時間自動受付が完了するLINE公式アカウントでのご予約が最もスムーズですが、もちろんお電話でもお気軽にご予約いただけます。
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 7: ACCESS (店舗アクセス・営業情報) -->
+    <section id="access" class="py-24 bg-slate-50 relative">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-stretch">
+                <!-- 店舗情報テキスト -->
+                <div class="lg:col-span-5 space-y-8 flex flex-col justify-between">
+                    <div class="space-y-6">
+                        <div class="inline-flex items-center gap-2 px-3 py-1 bg-brand-lightBlue rounded-full text-brand-blue text-xs font-bold tracking-widest uppercase">
+                            Access Info
+                        </div>
+                        <h3 class="text-3xl md:text-4xl font-serif font-bold text-brand-deepBlue leading-snug">
+                            当院へのアクセス・営業情報
+                        </h3>
+                        <p class="text-sm text-slate-500 leading-relaxed">
+                            当院は住宅街にある、静かで穏やかなプライベート空間です。駐車場も完備しておりますので、お車でもお気軽にお越しいただけます。
+                        </p>
+                    </div>
+
+                    <!-- 基本情報テーブル -->
+                    <div class="bg-white p-6 md:p-8 rounded-3xl border border-slate-100 shadow-sm space-y-4">
+                        <div class="flex items-start gap-4 pb-4 border-b border-slate-100">
+                            <i class="fa-solid fa-location-dot text-brand-blue mt-1"></i>
+                            <div>
+                                <h4 class="font-bold text-brand-deepBlue">やさしい整体院の所在地</h4>
+                                <p class="text-sm text-slate-500 mt-1">〒000-0000 ◯◯県◯◯市◯◯町1-2-3</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4 pb-4 border-b border-slate-100">
+                            <i class="fa-solid fa-clock text-brand-blue mt-1"></i>
+                            <div>
+                                <h4 class="font-bold text-brand-deepBlue">営業時間</h4>
+                                <p class="text-sm text-slate-500 mt-1">9:00 〜 20:00（完全予約制）</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4 pb-4 border-b border-slate-100">
+                            <i class="fa-solid fa-calendar-xmark text-brand-blue mt-1"></i>
+                            <div>
+                                <h4 class="font-bold text-brand-deepBlue">休診日</h4>
+                                <p class="text-sm text-slate-500 mt-1">水曜日・祝日</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <i class="fa-solid fa-car text-brand-blue mt-1"></i>
+                            <div>
+                                <h4 class="font-bold text-brand-deepBlue">駐車場</h4>
+                                <p class="text-sm text-slate-500 mt-1">敷地内専用駐車場 2台完備</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Google Maps (プレースホルダーまたは地図埋め込み) -->
+                <div class="lg:col-span-7 rounded-[2rem] overflow-hidden shadow-lg border border-slate-200/60 h-[350px] lg:h-auto min-h-[300px] relative bg-slate-200">
+                    <!-- GitHub Pages公開時に、以下のsrc内のiframeタグを本物のGoogle Mapsの共有埋め込みタグに変更可能です -->
+                    <div class="absolute inset-0 flex items-center justify-center bg-slate-50 border border-slate-200 p-6 text-center">
+                        <div class="space-y-4">
+                            <i class="fa-solid fa-map-location-dot text-6xl text-brand-blue/30 animate-pulse-slow"></i>
+                            <h4 class="font-serif font-bold text-brand-deepBlue">Google Maps 表示プレースホルダー</h4>
+                            <p class="text-xs text-slate-500 max-w-sm">※本番公開時に実際のGoogle Maps埋め込みコード（iframe）に差し替えることができます。現在は安全なデモ表示となっています。</p>
+                        </div>
+                    </div>
+                    <!-- 本物の地図を配置する場合のデモコード（必要時に有効化してください） -->
+                    <!-- <iframe src="https://www.google.com/maps/embed?pb=..." width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe> -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FINAL CTA SECTION (ご予約ボタン最終エリア) -->
+    <section class="py-24 bg-brand-deepBlue text-white relative overflow-hidden">
+        <!-- 植物の装飾イメージ -->
+        <div class="absolute -bottom-20 -left-20 w-80 h-80 bg-brand-green/10 rounded-full blur-3xl pointer-events-none"></div>
+        <div class="absolute -top-20 -right-20 w-80 h-80 bg-brand-blue/10 rounded-full blur-3xl pointer-events-none"></div>
+
+        <div class="max-w-4xl mx-auto px-6 text-center space-y-12 relative z-10 reveal">
+            <div class="space-y-4">
+                <p class="text-brand-green font-en font-bold tracking-widest text-sm uppercase">Reserve Now</p>
+                <h3 class="text-3xl md:text-5xl font-serif font-bold leading-tight">
+                    もう、ひとりで痛みを<br class="md:hidden">抱え込まないでください。
+                </h3>
+                <p class="text-sm md:text-base text-slate-300 max-w-xl mx-auto">
+                    この先の人生を笑顔で健康に過ごしていただくために。<br>
+                    あなたの大切なお体を、全力で、優しくサポートすることをお約束します。
+                </p>
+            </div>
+
+            <!-- オファーステッカー風 -->
+            <div class="inline-block bg-white/10 backdrop-blur-md border border-white/10 rounded-3xl p-6 md:p-8 max-w-lg mx-auto w-full">
+                <p class="text-brand-green text-xs md:text-sm font-bold tracking-widest mb-2 uppercase">【初回特別キャンペーン実施中】</p>
+                <p class="text-xl md:text-2xl font-serif font-bold mb-4">根本改善プレミアムコース（60分）</p>
+                <div class="flex items-baseline justify-center gap-2">
+                    <span class="text-xs text-slate-300 line-through">13,200円</span>
+                    <span class="text-brand-green font-bold text-sm">→ 特別体験</span>
+                    <span class="text-3xl md:text-4xl font-serif font-bold text-white">4,980</span>
+                    <span class="text-xs text-slate-300">円（税込）</span>
+                </div>
+            </div>
+
+            <!-- ボタン -->
+            <div class="flex flex-col md:flex-row gap-6 justify-center max-w-md mx-auto">
+                <a href="https://line.me" target="_blank" rel="noopener noreferrer" class="group flex items-center justify-center gap-3 w-full py-5 bg-brand-green hover:bg-emerald-600 text-white font-bold rounded-full text-center text-lg shadow-xl shadow-emerald-900/40 transition-all hover:scale-[1.02] active:scale-95">
+                    <i class="fa-brands fa-line text-2xl"></i>
+                    <span>LINEで24時間予約</span>
+                </a>
+                <a href="tel:000-000-000" class="flex items-center justify-center gap-2 w-full py-5 bg-white border border-transparent text-brand-deepBlue font-bold rounded-full text-center text-lg hover:bg-slate-50 transition-all hover:scale-[1.02] active:scale-95 shadow-lg">
+                    <i class="fa-solid fa-phone text-brand-blue"></i>
+                    <span>電話でお問い合わせ</span>
+                </a>
+            </div>
+            <p class="text-xs text-slate-400">※完全予約制ですので、事前のご連絡をお願いしております。</p>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="py-12 bg-slate-900 text-slate-400 text-center border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
+            <div>
+                <p class="text-white font-serif font-bold tracking-wide">やさしい整体院</p>
+                <p class="text-[10px] text-slate-500 tracking-wider uppercase mt-1">YASASHII SEITAI CLINIC</p>
+            </div>
+            <p class="text-xs text-slate-500">
+                &copy; 2026 やさしい整体院. All Rights Reserved.
+            </p>
+        </div>
+    </footer>
+
+    <!-- INTERACTION & ANIMATION SCRIPT -->
+    <script>
+        // ① モバイルナビゲーションの開閉制御
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        menuBtn.addEventListener('click', () => {
+            const isHidden = mobileMenu.classList.contains('hidden');
+            if (isHidden) {
+                mobileMenu.classList.remove('hidden');
+                menuBtn.innerHTML = '<i class="fa-solid fa-xmark text-2xl"></i>';
+            } else {
+                mobileMenu.classList.add('hidden');
+                menuBtn.innerHTML = '<i class="fa-solid fa-bars text-2xl"></i>';
+            }
+        });
+
+        // リンククリック時に閉じる
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+                menuBtn.innerHTML = '<i class="fa-solid fa-bars text-2xl"></i>';
+            });
+        });
+
+        // ② アコーディオン (FAQ) の制御
+        const faqToggles = document.querySelectorAll('.faq-toggle');
+        faqToggles.forEach(toggle => {
+            toggle.addEventListener('click', () => {
+                const content = toggle.nextElementSibling;
+                const icon = toggle.querySelector('i');
+                const isOpened = content.style.maxHeight && content.style.maxHeight !== '0px';
+
+                // 他のアコーディオンを閉じる（すべて閉じる仕様）
+                faqToggles.forEach(otherToggle => {
+                    const otherContent = otherToggle.nextElementSibling;
+                    const otherIcon = otherToggle.querySelector('i');
+                    otherContent.style.maxHeight = '0px';
+                    otherIcon.classList.remove('rotate-180');
+                    otherToggle.parentElement.classList.remove('border-brand-blue/30');
+                    otherToggle.parentElement.classList.add('border-slate-100');
+                });
+
+                if (!isOpened) {
+                    content.style.maxHeight = content.scrollHeight + 'px';
+                    icon.classList.add('rotate-180');
+                    toggle.parentElement.classList.remove('border-slate-100');
+                    toggle.parentElement.classList.add('border-brand-blue/30');
+                }
+            });
+        });
+
+        // ③ スクロールフェードイン (Intersection Observer)
+        const revealElements = document.querySelectorAll('.reveal');
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -8% 0px'
+        };
+
+        const revealObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                    // 一度表示されたら監視を外す
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        revealElements.forEach(el => {
+            revealObserver.observe(el);
+        });
+
+        // 読み込み時に少しスクロールされていたら最初からアクティブ化
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                revealElements.forEach(el => {
+                    const rect = el.getBoundingClientRect();
+                    if (rect.top < window.innerHeight) {
+                        el.classList.add('active');
+                    }
+                });
+            }, 100);
+        });
+    </script>
+</body>
+</html>
