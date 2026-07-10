@@ -91,8 +91,10 @@
         <div class="max-w-7xl mx-auto px-6 h-20 md:h-24 flex justify-between items-center">
             <!-- ロゴエリア -->
             <a href="#" class="flex items-center gap-3 group">
-
-   <img src="logo.png" alt="Reframe整体院" class="h-full w-auto object-contain transition-transform duration-300 group-hover:scale-105" onerror="this.style.display='none'; document.getElementById('text-logo').classList.remove('hidden')">
+                <div class="h-12 md:h-16 flex items-center">
+                    <!-- REPLACE: 店舗ロゴ画像（Reframe ロゴ.png を使用） -->
+                    <!-- 画像が読み込めない場合は、フォントロゴを代替表示（フォールバック）するように onerror を設定 -->
+                    <img src="Reframe ロゴ.png" alt="Reframe整体院 ロゴ" class="h-full w-auto object-contain transition-transform duration-300 group-hover:scale-105" onerror="this.style.display='none'; document.getElementById('text-logo').classList.remove('hidden')">
                     <span id="text-logo" class="hidden text-brand-blue font-serif font-bold text-lg md:text-2xl tracking-wide flex items-center gap-1">
                         Reframe<span class="text-brand-green font-sans font-semibold text-sm md:text-base">整体院</span>
                     </span>
@@ -1029,8 +1031,10 @@
                         el.classList.add('active');
                     }
                 });
-            }, 100);                                                                
+            }, 100);
         });
     </script>
 </body>
 </html>
+```
+eof
