@@ -92,9 +92,8 @@
             <!-- ロゴエリア -->
             <a href="#" class="flex items-center gap-3 group">
                 <div class="h-12 md:h-16 flex items-center">
-                    <!-- REPLACE: 店舗ロゴ画像（Reframe ロゴ.png を使用） -->
-                    <!-- 画像が読み込めない場合は、フォントロゴを代替表示（フォールバック）するように onerror を設定 -->
-                    <img src="Reframe ロゴ.png" alt="Reframe整体院 ロゴ" class="h-full w-auto object-contain transition-transform duration-300 group-hover:scale-105" onerror="this.style.display='none'; document.getElementById('text-logo').classList.remove('hidden')">
+                    <!-- 店舗ロゴ画像（logo.png に差し替え） -->
+                    <img src="logo.png" alt="Reframe整体院 ロゴ" class="h-full w-auto object-contain transition-transform duration-300 group-hover:scale-105" onerror="this.style.display='none'; document.getElementById('text-logo').classList.remove('hidden')">
                     <span id="text-logo" class="hidden text-brand-blue font-serif font-bold text-lg md:text-2xl tracking-wide flex items-center gap-1">
                         Reframe<span class="text-brand-green font-sans font-semibold text-sm md:text-base">整体院</span>
                     </span>
@@ -117,7 +116,7 @@
                 <div class="flex flex-col items-end text-right">
                     <a href="tel:090-6596-0421" class="flex items-center gap-2 text-brand-deepBlue font-bold hover:text-brand-blue transition-colors">
                         <i class="fa-solid fa-phone text-brand-blue"></i>
-                        <span>ご相談・お電話</span>
+                        <span>090-6596-0421</span>
                     </a>
                     <span class="text-[9px] text-slate-400 mt-0.5">※施術中はお電話に出られない場合がございます</span>
                 </div>
@@ -166,7 +165,7 @@
         <div class="max-w-7xl mx-auto px-6 w-full grid grid-cols-1 lg:grid-cols-12 gap-12 items-center relative z-10">
             <!-- テキストエリア -->
             <div class="lg:col-span-7 space-y-8 text-center lg:text-left">
-                <!-- 身体に優しい表現に変更 -->
+                <!-- 身体に優しい表現 -->
                 <div class="inline-flex items-center gap-2 px-4 py-2 bg-white/80 border border-brand-blue/20 rounded-full text-brand-blue text-xs md:text-sm font-semibold shadow-sm backdrop-blur-sm">
                     <i class="fa-solid fa-leaf text-brand-green"></i>
                     <span>身体に負担の少ない、穏やかな施術・生活に寄り添う完全予約制</span>
@@ -205,7 +204,7 @@
                             <span>お電話でのご相談・お問い合せ</span>
                         </a>
                     </div>
-                    <!-- お電話対応に関する丁寧な補足を追加 -->
+                    <!-- お電話対応に関する丁寧な補足 -->
                     <p class="text-[11px] text-slate-500 leading-relaxed text-center lg:text-left max-w-md lg:max-w-none">
                         ※施術中はお電話に出られない場合がございます。お急ぎでない場合は、24時間受付のLINE予約をご活用ください。
                     </p>
@@ -228,7 +227,7 @@
                 </div>
             </div>
 
-            <!-- メインビジュアル画像エリア -->
+            <!-- メインビジュアル画像エリア（clinic.jpg を採用） -->
             <div class="lg:col-span-5 relative mt-6 lg:mt-0 flex justify-center">
                 <div class="w-full max-w-md relative">
                     <!-- アクセントの植物・サークル装飾 -->
@@ -236,9 +235,9 @@
                         <i class="fa-solid fa-leaf text-4xl text-brand-green"></i>
                     </div>
                     
-                    <!-- REPLACE: ヒーローメイン画像 -->
+                    <!-- ヒーローメイン画像（clinic.jpg を反映） -->
                     <div class="rounded-[2.5rem] overflow-hidden shadow-2xl border-4 border-white aspect-[3/4] bg-white">
-                        <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?q=80&w=1200&auto=format&fit=crop" alt="心地よい日差しが差し込む安心のプライベート空間" class="w-full h-full object-cover">
+                        <img src="clinic.jpg" alt="心地よい日差しが差し込む安心のプライベート空間（施術室）" class="w-full h-full object-cover">
                     </div>
                 </div>
             </div>
@@ -274,9 +273,9 @@
                             </p>
                         </div>
                     </div>
-                    <!-- REPLACE: カウンセリング写真 -->
+                    <!-- カウンセリング・待合室写真（waiting-room.jpg を反映） -->
                     <div class="mt-8 rounded-2xl overflow-hidden aspect-video bg-white shadow-sm border border-slate-100">
-                        <img src="https://images.unsplash.com/photo-1516549655169-df83a0774514?q=80&w=600&auto=format&fit=crop" alt="お話を丁寧にじっくりと伺うカウンセリングの様子" class="w-full h-full object-cover">
+                        <img src="waiting-room.jpg" alt="お話を丁寧にじっくりと伺う清潔感のある待合スペース" class="w-full h-full object-cover">
                     </div>
                 </div>
 
@@ -293,9 +292,9 @@
                             </p>
                         </div>
                     </div>
-                    <!-- REPLACE: 施術写真 -->
+                    <!-- 施術写真（treatment2.jpg を反映） -->
                     <div class="mt-8 rounded-2xl overflow-hidden aspect-video bg-white shadow-sm border border-slate-100">
-                        <img src="https://images.unsplash.com/photo-1600334089648-b0d9d3028eb2?q=80&w=600&auto=format&fit=crop" alt="身体に負担をかけない穏やかで丁寧な施術" class="w-full h-full object-cover">
+                        <img src="treatment2.jpg" alt="身体に負担をかけない穏やかで丁寧な施術の様子" class="w-full h-full object-cover">
                     </div>
                 </div>
 
@@ -312,7 +311,7 @@
                             </p>
                         </div>
                     </div>
-                    <!-- REPLACE: 日常を楽しむ写真 -->
+                    <!-- 日常・セルフケアを楽しむイメージ写真（高画質風景） -->
                     <div class="mt-8 rounded-2xl overflow-hidden aspect-video bg-white shadow-sm border border-slate-100">
                         <img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?q=80&w=600&auto=format&fit=crop" alt="散歩など日常を自分らしく楽しむ様子" class="w-full h-full object-cover">
                     </div>
@@ -326,13 +325,13 @@
         <div class="absolute inset-y-0 right-0 w-1/3 bg-white/40 skew-x-12 -z-10"></div>
         <div class="max-w-7xl mx-auto px-6">
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
-                <!-- 左側：院長先生の写真 -->
+                <!-- 左側：院長先生の写真（owner.jpg を反映） -->
                 <div class="lg:col-span-5 relative flex justify-center reveal">
                     <div class="w-full max-w-sm relative">
                         <div class="absolute -top-6 -left-6 w-32 h-32 bg-brand-green/10 rounded-full blur-2xl pointer-events-none"></div>
-                        <!-- REPLACE: 院長写真 -->
+                        <!-- 院長メイン写真 -->
                         <div class="rounded-3xl overflow-hidden shadow-2xl border-4 border-white aspect-[3/4] bg-white">
-                            <img src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?q=80&w=1200&auto=format&fit=crop" alt="Reframe整体院 院長" class="w-full h-full object-cover">
+                            <img src="owner.jpg" alt="Reframe整体院 院長" class="w-full h-full object-cover">
                         </div>
                         <div class="absolute -bottom-6 -right-6 bg-white border border-brand-lightBlue p-4 rounded-2xl shadow-xl flex items-center gap-3">
                             <i class="fa-solid fa-heart text-2xl text-rose-400"></i>
@@ -376,9 +375,10 @@
                         </p>
                     </div>
 
+                    <!-- 院長紹介カード（owner2.jpg も使用して信頼感アップ） -->
                     <div class="pt-4 border-t border-slate-200/60 flex items-center gap-4">
-                        <div class="w-12 h-12 rounded-full bg-brand-lightBlue flex items-center justify-center text-brand-blue">
-                            <i class="fa-solid fa-leaf text-brand-green"></i>
+                        <div class="w-14 h-14 rounded-full overflow-hidden border-2 border-brand-lightBlue shrink-0">
+                            <img src="owner2.jpg" alt="院長 サブカット" class="w-full h-full object-cover">
                         </div>
                         <div>
                             <p class="font-serif text-lg font-bold text-brand-deepBlue">Reframe整体院 院長</p>
@@ -411,7 +411,6 @@
                 </div>
 
                 <div class="p-8 md:p-12 space-y-10">
-                    <!-- 限定理由の強調を抑え、注意書き程度に変更（15名→5名へ修正、お知らせ文言調整） -->
                     <div class="max-w-2xl mx-auto text-center">
                         <p class="text-xs md:text-sm text-slate-500 leading-relaxed">
                             ※完全予約制で一人ひとりと誠実に向き合うため、お受けできる人数に限りがございます。誠に恐れ入りますが、定員に達し次第、予告なく終了させていただきます。
@@ -466,7 +465,7 @@
                                 <p class="text-[11px] text-slate-400 mt-4 leading-relaxed">※お時間は目安であり、身体の状態によって前後します。</p>
                             </div>
                             
-                            <!-- 継続プラン（特典を予感させる魅力的な案内） -->
+                            <!-- 継続プラン -->
                             <div class="border border-brand-green/30 rounded-2xl p-6 bg-brand-lightGreen/40 hover:border-brand-green/60 transition-all flex flex-col justify-between">
                                 <div>
                                     <div class="flex justify-between items-center">
@@ -476,6 +475,18 @@
                                         <span class="bg-brand-green text-white text-[10px] px-2 py-0.5 rounded-full font-bold">特別優待</span>
                                     </div>
                                     <p class="text-sm font-bold text-brand-deepBlue mt-3 leading-relaxed">
+                                        身体を本気で健やかに保ちたい方へ
+                                    </p>
+                                </div>
+                                <p class="text-xs text-slate-600 mt-4 leading-relaxed">
+                                    継続的なケアをご希望の方向けに、各種お得なプランや特別な通院サポート特典をご用意しております。お客様の症状やライフスタイルに合わせ、詳しくは初回施術時に丁寧にご案内いたします。
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 今すぐご予約エリア -->
+                    <div class="space-y-4 max-w-2xl mx-auto pt-4 text-center">
                         <div class="flex flex-col md:flex-row items-center justify-center gap-6 max-w-lg mx-auto">
                             <!-- LINEボタンエリア -->
                             <div class="flex-1 w-full space-y-2">
@@ -486,7 +497,7 @@
                                 <p class="text-[11px] text-slate-400 text-center md:text-left">※お友だち登録後、丁寧な自動案内でスムーズに日時を選択できます。</p>
                             </div>
                             
-                            <!-- パソコン閲覧時のみ表示されるQRコード（スマホ時は自動非表示） -->
+                            <!-- パソコン閲覧時のみ表示されるQRコード -->
                             <div class="hidden md:flex flex-col items-center shrink-0 bg-white p-3 rounded-2xl border border-slate-100 shadow-sm w-32">
                                 <img src="L_gainfriends_2dbarcodes_GW.png" alt="Reframe整体院 LINE QRコード" class="w-20 h-20 object-contain" onerror="this.src='https://placehold.co/100x100/ecfdf5/047857?text=LINE+QR'">
                                 <span class="text-[9px] text-slate-400 mt-1.5 font-bold leading-tight">パソコンの方は<br>スマホで読み取り</span>
@@ -507,9 +518,7 @@
                                 <i class="fa-solid fa-phone-volume"></i>
                                 <span>090-6596-0421</span>
                             </a>
-                            <!-- 営業時間の変更を反映 -->
                             <p class="text-[10px] text-slate-500">9:00〜17:00（不定休・完全予約制）</p>
-                            <!-- 施術中の案内を追記 -->
                             <p class="text-[11px] text-amber-600 bg-amber-50 rounded-lg p-2 leading-relaxed border border-amber-100 text-left max-w-xs mx-auto mt-2">
                                 <i class="fa-solid fa-circle-info mr-1 text-amber-500"></i>
                                 施術中はお電話に出られない場合がございます。折り返しご連絡いたしますので、留守番電話にメッセージ（お名前・ご連絡先）を残していただくか、LINEからご連絡いただけますと幸いです。
@@ -537,11 +546,10 @@
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
-                <!-- ステップ1 -->
+                <!-- ステップ1 (waiting-room.jpg を反映) -->
                 <div class="reveal relative space-y-6">
                     <div class="relative rounded-3xl overflow-hidden aspect-video shadow-md border border-slate-100 bg-slate-50">
-                        <!-- REPLACE: 受付写真 -->
-                        <img src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?q=80&w=600&auto=format&fit=crop" alt="丁寧にお出迎えする受付の様子" class="w-full h-full object-cover">
+                        <img src="waiting-room.jpg" alt="丁寧にお出迎えする受付・お座りいただくソファ席" class="w-full h-full object-cover">
                         <div class="absolute top-4 left-4 bg-brand-blue text-white w-8 h-8 rounded-full flex items-center justify-center font-bold text-sm">
                             1
                         </div>
@@ -549,7 +557,7 @@
                     <div class="space-y-2">
                         <h4 class="text-lg font-serif font-bold text-brand-deepBlue">ご来院・受付</h4>
                         <p class="text-sm text-slate-500 leading-relaxed">
-                            明るく落ち着いた静かなプライベート空間でお出迎えいたします。身体の調子などをリラックスしてご記入いただきます。
+                            明るく落ち着いた静かなプライベートスペースでお出迎えいたします。身体の調子などをリラックスしてご記入いただきます。
                         </p>
                     </div>
                     <div class="hidden md:block absolute top-1/2 -right-4 -translate-y-12 text-slate-300 text-xl">
@@ -557,11 +565,10 @@
                     </div>
                 </div>
 
-                <!-- ステップ2 -->
+                <!-- ステップ2 (owner.jpg を反映) -->
                 <div class="reveal relative space-y-6" style="transition-delay: 150ms;">
                     <div class="relative rounded-3xl overflow-hidden aspect-video shadow-md border border-slate-100 bg-slate-50">
-                        <!-- REPLACE: カウンセリング写真 -->
-                        <img src="https://images.unsplash.com/photo-1516549655169-df83a0774514?q=80&w=600&auto=format&fit=crop" alt="お悩みをじっくりヒアリングするカウンセリング" class="w-full h-full object-cover">
+                        <img src="owner.jpg" alt="お悩みをじっくりヒアリングする院長" class="w-full h-full object-cover">
                         <div class="absolute top-4 left-4 bg-brand-blue text-white w-8 h-8 rounded-full flex items-center justify-center font-bold text-sm">
                             2
                         </div>
@@ -577,11 +584,10 @@
                     </div>
                 </div>
 
-                <!-- ステップ3 -->
+                <!-- ステップ3 (treatment.jpg を反映) -->
                 <div class="reveal relative space-y-6" style="transition-delay: 300ms;">
                     <div class="relative rounded-3xl overflow-hidden aspect-video shadow-md border border-slate-100 bg-slate-50">
-                        <!-- REPLACE: 施術写真 -->
-                        <img src="https://images.unsplash.com/photo-1600334089648-b0d9d3028eb2?q=80&w=600&auto=format&fit=crop" alt="身体に負担をかけない穏やかな施術" class="w-full h-full object-cover">
+                        <img src="treatment.jpg" alt="身体に負担をかけない穏やかな施術の様子" class="w-full h-full object-cover">
                         <div class="absolute top-4 left-4 bg-brand-blue text-white w-8 h-8 rounded-full flex items-center justify-center font-bold text-sm">
                             3
                         </div>
@@ -597,11 +603,10 @@
                     </div>
                 </div>
 
-                <!-- ステップ4 -->
+                <!-- ステップ4 (owner2.jpg を反映) -->
                 <div class="reveal relative space-y-6" style="transition-delay: 450ms;">
                     <div class="relative rounded-3xl overflow-hidden aspect-video shadow-md border border-slate-100 bg-slate-50">
-                        <!-- REPLACE: セルフケア指導 -->
-                        <img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?q=80&w=600&auto=format&fit=crop" alt="今後の過ごし方についてセルフケアのアドバイス" class="w-full h-full object-cover">
+                        <img src="owner2.jpg" alt="今後の過ごし方についてアドバイス" class="w-full h-full object-cover">
                         <div class="absolute top-4 left-4 bg-brand-blue text-white w-8 h-8 rounded-full flex items-center justify-center font-bold text-sm">
                             4
                         </div>
@@ -673,7 +678,7 @@
 
             <!-- アコーディオン -->
             <div class="space-y-4">
-                <!-- Q: どんな方が通われていますか？（追加分） -->
+                <!-- Q: どんな方が通われていますか？ -->
                 <div class="border border-slate-100 rounded-2xl overflow-hidden shadow-sm transition-all duration-300">
                     <button class="faq-toggle w-full flex justify-between items-center p-6 text-left hover:bg-slate-50/50 transition-colors">
                         <span class="font-serif font-bold text-brand-deepBlue text-base md:text-lg flex items-center gap-3">
@@ -808,16 +813,10 @@
                             店舗情報とアクセス
                         </h3>
                         <p class="text-sm text-slate-500 leading-relaxed">
-                            当院は住宅街にある、静かで穏やかなプライベート空間です。無料駐車場も完備しておりますので、お車でもお気軽にお越しいただけます。
+                            当院は岐阜県瑞穂市にある、静かで穏やかなプライベート空間です。無料駐車場も完備しておりますので、お車でもお気軽にお越しいただけます。
                         </p>
                     </div>
 
-                    <!-- 基本情報テーブル（最新情報適用済み） -->
-                    <div class="bg-white p-6 md:p-8 rounded-3xl border border-slate-100 shadow-sm space-y-4">
-                        <div class="flex items-start gap-4 pb-4 border-b border-slate-100">
-                            <i class="fa-solid fa-location-dot text-brand-blue mt-1"></i>
-                            <div>
-                                <h4 class="font-bold text-brand-deepBlue">Reframe整体院の所在地</h4>
                     <!-- 基本情報テーブル -->
                     <div class="bg-white p-6 md:p-8 rounded-3xl border border-slate-100 shadow-sm space-y-4">
                         <div class="flex items-start gap-4 pb-4 border-b border-slate-100">
@@ -860,7 +859,6 @@
 
                 <!-- GOOGLE MAPS AREA -->
                 <div class="lg:col-span-7 rounded-[2rem] overflow-hidden shadow-lg border border-slate-200/60 h-[400px] lg:h-auto min-h-[350px] relative bg-slate-200">
-                    <!-- REPLACE: Google Map iFrame -->
                     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3252.685860186104!2d136.67573827577462!3d35.388246572683265!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6003af374784c117%3A0xaa4d06c6c1dece5c!2zUmVmcmFtZeaVtOS9k-mZog!5e0!3m2!1sja!2sjp!4v1783326309150!5m2!1sja!2sjp" class="absolute inset-0 w-full h-full border-0" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
                 </div>
             </div>
@@ -901,7 +899,7 @@
                 </p>
             </div>
 
-            <!-- ボタン（お電話CTAのそばに「すぐに出られない」旨の優しさを付記） -->
+            <!-- ボタン（お電話CTAのそばに「すぐに出られない」旨の案内） -->
             <div class="space-y-6 max-w-2xl mx-auto">
                 <div class="flex flex-col md:flex-row items-center justify-center gap-6 max-w-xl mx-auto">
                     <!-- ボタン群 -->
@@ -925,7 +923,7 @@
                     </div>
                 </div>
 
-                <!-- 施術中のため直ぐに出られない旨の案内をここに美しく表記 -->
+                <!-- 施術中のため直ぐに出られない旨の案内 -->
                 <p class="text-xs text-slate-300 bg-white/5 border border-white/10 rounded-xl p-3 leading-relaxed text-left max-w-xl mx-auto">
                     <span class="font-bold text-brand-green block mb-1">【お電話をご希望の方へのお願い】</span>
                     施術中はお電話にすぐ出られない場合がございます。その場合は追ってこちらから折り返しご連絡いたしますので、留守番電話に「お名前とご連絡先」の録音をお願いいたします。LINEメッセージからでもお気軽にお問い合わせいただけます。
