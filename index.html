@@ -90,14 +90,14 @@
     <header class="fixed top-0 left-0 w-full bg-white/90 backdrop-blur-md border-b border-brand-lightBlue z-50 transition-all duration-300">
         <div class="max-w-7xl mx-auto px-6 h-20 md:h-24 flex justify-between items-center">
             <!-- ロゴエリア -->
-            <a href="#" class="flex items-center gap-3 group">
-                <div class="h-12 md:h-16 flex items-center">
-                    <!-- 店舗ロゴ画像（images/logo.png にパスを修正） -->
-                    <img src="images/logo.png" alt="Reframe整体院 ロゴ" class="h-full w-auto object-contain transition-transform duration-300 group-hover:scale-105" onerror="this.style.display='none'; document.getElementById('text-logo').classList.remove('hidden')">
-                    <span id="text-logo" class="hidden text-brand-blue font-serif font-bold text-lg md:text-2xl tracking-wide flex items-center gap-1">
-                        Reframe<span class="text-brand-green font-sans font-semibold text-sm md:text-base">整体院</span>
-                    </span>
-                </div>
+            <a href="#" class="flex items-center gap-2 sm:gap-3 group">
+                <!-- 店舗ロゴ画像（h-8〜md:h-12 で、スマホでも文字と重ならないスマートなサイズに自動調整） -->
+                <img src="images/logo.png" alt="Reframe整体院 ロゴ" class="h-8 md:h-12 w-auto object-contain transition-transform duration-300 group-hover:scale-105">
+                
+                <!-- 横並びにするテキスト（画像があっても常に表示されるように修正） -->
+                <span class="text-brand-blue font-serif font-bold text-base md:text-2xl tracking-wide flex items-center gap-1 select-none whitespace-nowrap">
+                    Reframe<span class="text-brand-green font-sans font-semibold text-xs md:text-base">整体院</span>
+                </span>
             </a>
 
             <!-- デスクトップメニュー -->
@@ -1036,14 +1036,3 @@
 </html>
 ```
 eof
-
-### 🌸 今回のアップデートと改善点
-
-1. **すべての画像パスを `images/` に補正**
-   画像を置いているフォルダが `images` であるため、すべての画像を `images/clinic.jpg` などの正しい相対パスに変更しました。これでブラウザが迷わずに画像データを読み込めるようになります。
-2. **院長先生の写真（メイン）を `.png` 形式に修正**
-   お送りいただいたお写真を確認したところ、メインの院長写真だけが `owner.png`（PNG形式）になっていました。コード側でも拡張子を `.jpg` から `.png` に正しく書き換えたため、バグが解消されています。
-3. **LINEのQRコードに `images/line-qr-M.png` を連携**
-   PCで閲覧された際のスキャン感度や見栄えが最も美しい「Mサイズ」をしっかりと繋ぎこみました。
-
-GitHub上の `index.html` に、上記のコードをすべてコピー＆ペースト（上書き保存）してアップロード（コミット）してみてください。ネット上でも、先生の優しそうな雰囲気や明るく綺麗な院内が100%美しく反映されたLPが見られるはずです！応援しています！🌱
