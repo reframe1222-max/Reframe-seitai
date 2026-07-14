@@ -89,7 +89,6 @@
     <!-- ==========================================
          HEADER / NAVIGATION
          ========================================== -->
-    <!-- STREAMING_CHUNK: Styling layout header and menus... -->
     <header class="fixed top-0 left-0 w-full bg-white/90 backdrop-blur-md border-b border-brand-lightBlue z-50 transition-all duration-300">
         <div class="max-w-7xl mx-auto px-6 h-20 md:h-24 flex justify-between items-center">
             
@@ -169,9 +168,8 @@
     </header>
 
     <!-- ==========================================
-         HERO SECTION (①・②「お」を付けない身体の表記を適用)
+         HERO SECTION (吹き出しCTAを元のシンプルな「初回施術についてはこちらから」に統一)
          ========================================== -->
-    <!-- STREAMING_CHUNK: Formatting Hero Section elements precisely matching the older code... -->
     <section class="relative min-h-[90vh] lg:min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-white via-brand-lightBlue to-brand-lightGreen pt-24 pb-16">
         <!-- 植物の装飾イメージ（背景） -->
         <div class="absolute -top-12 -left-12 w-48 h-48 bg-brand-green/10 rounded-full blur-3xl pointer-events-none"></div>
@@ -180,7 +178,7 @@
         <div class="max-w-7xl mx-auto px-6 w-full grid grid-cols-1 lg:grid-cols-12 gap-12 items-center relative z-10">
             <!-- テキストエリア -->
             <div class="lg:col-span-7 space-y-8 text-center lg:text-left">
-                <!-- 身体に優しい表現 (①：「お」を付けない身体表記。文字化け徹底排除) -->
+                <!-- 身体に優しい表現 (①：「お」を付けない身体表記) -->
                 <div class="inline-flex items-center gap-2 px-4 py-2 bg-white/80 border border-brand-blue/20 rounded-full text-brand-blue text-xs md:text-sm font-semibold shadow-sm backdrop-blur-sm">
                     <i class="fa-solid fa-leaf text-brand-green"></i>
                     <span>身体に負担の少ない、穏やかな施術・生活に寄り添う完全予約制</span>
@@ -206,7 +204,7 @@
                     </p>
                 </div>
 
-                <!-- LP特典誘導つきCTAボタン -->
+                <!-- LP特典誘導つきCTAボタン (確認の上、吹き出しは簡潔で分かりやすい旧来の文章にキープ) -->
                 <div class="flex flex-col justify-center lg:justify-start gap-4 pt-2">
                     <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
                         <a href="#offer" class="group relative px-8 py-5 bg-brand-green text-white font-bold rounded-full text-center hover:bg-emerald-600 hover:scale-[1.02] active:scale-95 transition-all shadow-xl shadow-emerald-200">
@@ -226,11 +224,11 @@
                     </p>
                 </div>
 
-                <!-- 信頼実績パーツ -->
+                <!-- 信頼実績パーツ (カウンセリング・検査 表記適用) -->
                 <div class="grid grid-cols-3 gap-4 border-t border-slate-200/60 pt-8 max-w-md mx-auto lg:mx-0">
                     <div class="text-center lg:text-left">
                         <p class="text-2xl md:text-3xl font-en font-bold text-brand-blue">90〜120分</p>
-                        <p class="text-xs text-slate-500 font-medium">初回カウンセリング</p>
+                        <p class="text-xs text-slate-500 font-medium">初回カウンセリング・検査</p>
                     </div>
                     <div class="text-center lg:text-left border-x border-slate-200">
                         <p class="text-2xl md:text-3xl font-en font-bold text-brand-blue">1対1</p>
@@ -251,7 +249,7 @@
                         <i class="fa-solid fa-leaf text-4xl text-brand-green"></i>
                     </div>
                     
-                    <!-- ヒーローメイン画像 (treatment.jpg) -->
+                    <!-- ヒーローメイン画像 -->
                     <div class="rounded-[2.5rem] overflow-hidden shadow-2xl border-4 border-white aspect-[3/4] bg-white">
                         <img src="images/treatment.jpg" alt="身体に負担をかけない穏やかで丁寧な施術の様子" class="w-full h-full object-cover">
                     </div>
@@ -263,7 +261,6 @@
     <!-- ==========================================
          SECTION 1: STRENGTHS (選ばれる理由)
          ========================================== -->
-    <!-- STREAMING_CHUNK: Formatting Strengths section with③'s exact rules... -->
     <section id="strengths" class="py-24 bg-white relative">
         <div class="max-w-7xl mx-auto px-6">
             <div class="text-center max-w-3xl mx-auto mb-20 space-y-4">
@@ -298,7 +295,7 @@
                     </div>
                 </div>
 
-                <!-- 理由2 (③：おは付けず「身体にかかる負担」のみ変更。元のニュアンス・文章を完全キープ) -->
+                <!-- 理由2 (歪み調整に配慮した新文章へ完全書き換えを実施。おは付けない「身体にかかる負担」) -->
                 <div class="reveal bg-slate-50 rounded-3xl p-8 border border-slate-100 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between" style="transition-delay: 150ms;">
                     <div class="space-y-6">
                         <div class="w-12 h-12 rounded-full bg-brand-lightGreen flex items-center justify-center text-brand-green text-xl font-bold font-en">
@@ -307,7 +304,7 @@
                         <div class="space-y-3">
                             <h4 class="text-xl font-serif font-bold text-brand-deepBlue">身体本来の力を活かす整体</h4>
                             <p class="text-sm leading-relaxed text-slate-500">
-                                身体には本来、快適に過ごすための力が備わっています。身体にかかる負担に配慮しながら、部分的な痛みだけではなく全体の調和へと穏やかにアプローチします。
+                                身体にかかる負担に配慮しながら、部分的な痛みだけではなく、不調の原因となっている全身の歪みを、無理のない優しい方法で調整します。
                             </p>
                         </div>
                     </div>
@@ -340,9 +337,8 @@
     </section>
 
     <!-- ==========================================
-         SECTION 4: FLOW (ご来院当日の流れ & ④おは付けず元の文章をそのまま維持)
+         SECTION 2: FLOW (ご来院当日の流れ & ④おは付けず元の「身体の調子」をそのまま維持)
          ========================================== -->
-    <!-- STREAMING_CHUNK: Formatting Flow steps precisely as original code... -->
     <section id="flow" class="py-24 bg-brand-lightBlue/10 relative">
         <div class="max-w-7xl mx-auto px-6">
             <div class="text-center max-w-3xl mx-auto mb-20 space-y-4">
@@ -435,9 +431,8 @@
     </section>
 
     <!-- ==========================================
-         SECTION 3: OFFER (初回体験＆料金案内)
+         SECTION 3: OFFER (初回体験＆料金案内 - カウンセリング・詳細な検査・施術 表記適用)
          ========================================== -->
-    <!-- STREAMING_CHUNK: Setting up the offer pricing layout... -->
     <section id="offer" class="py-24 bg-gradient-to-b from-white to-brand-lightBlue relative">
         <div class="max-w-4xl mx-auto px-6">
             <div class="bg-white rounded-[2.5rem] border border-brand-lightBlue shadow-2xl overflow-hidden relative reveal">
@@ -464,13 +459,13 @@
                         </p>
                     </div>
 
-                    <!-- 初回特別価格提示エリア -->
+                    <!-- 初回特別価格提示エリア (カウンセリング・詳細な検査・施術 表記に修正) -->
                     <div class="text-center space-y-4">
                         <h4 class="text-2xl md:text-3xl font-serif font-bold text-brand-deepBlue">
-                            初回施術（カウンセリング＆施術）
+                            初回施術（カウンセリング・詳細な検査・施術）
                         </h4>
                         <p class="text-xs md:text-sm font-semibold text-brand-green tracking-widest uppercase">
-                            約90〜120分（丁寧なヒアリングと全身の丁寧なバランス調整）
+                            約90〜120分（丁寧なヒアリングと詳細な検査、全身の丁寧なバランス調整）
                         </p>
                         
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-xl mx-auto pt-4">
@@ -621,7 +616,6 @@
     <!-- ==========================================
          SECTION 5: FAQ (よくある質問 & FAQ Q3にて身体を締め付けないに完全修正)
          ========================================== -->
-    <!-- STREAMING_CHUNK: Setting up FAQ Accordion styling and items... -->
     <section id="faq" class="py-24 bg-brand-lightBlue/10 relative">
         <div class="max-w-4xl mx-auto px-6">
             <div class="text-center max-w-3xl mx-auto mb-20 space-y-4">
@@ -762,7 +756,6 @@
     <!-- ==========================================
          SECTION 6: STORY (⑤「お身体」おを付ける表現を正確に維持)
          ========================================== -->
-    <!-- STREAMING_CHUNK: Formatting Story section to match original wording exactly... -->
     <section id="story" class="py-24 bg-white relative">
         <div class="absolute inset-y-0 right-0 w-1/3 bg-slate-50 skew-x-12 -z-10"></div>
         <div class="max-w-7xl mx-auto px-6">
@@ -901,9 +894,8 @@
     </section>
 
     <!-- ==========================================
-         FINAL CTA SECTION (⑤おを付ける表現「あなたの大切なお身体が〜」を正確に適用)
+         FINAL CTA SECTION (⑤おを付ける表現「あなたの大切なお身体が〜」を正確に適用。カウンセリング・詳細な検査・整体 表記適用)
          ========================================== -->
-    <!-- STREAMING_CHUNK: Outputting final Call To Action area matching specific rule choices... -->
     <section class="py-24 bg-brand-deepBlue text-white relative overflow-hidden">
         <!-- 植物の装飾イメージ -->
         <div class="absolute -bottom-20 -left-20 w-80 h-80 bg-brand-green/10 rounded-full blur-3xl pointer-events-none"></div>
@@ -921,10 +913,10 @@
                 </p>
             </div>
 
-            <!-- オファー案内（5名様枠、ご紹介チラシ3,980円キープ） -->
+            <!-- オファー案内（5名様枠、ご紹介チラシ3,980円キープ。カウンセリング・詳細な検査・整体 に修正） -->
             <div class="inline-block bg-white/10 backdrop-blur-md border border-white/10 rounded-3xl p-6 md:p-8 max-w-lg mx-auto w-full">
                 <span class="inline-block bg-brand-green text-white text-xs font-bold px-3 py-1 rounded-full tracking-widest mb-3 animate-bounce">【毎月5名様限定 特別枠】</span>
-                <p class="text-xl md:text-2xl font-serif font-bold mb-4">初回施術（カウンセリング＆整体）</p>
+                <p class="text-xl md:text-2xl font-serif font-bold mb-4">初回施術（カウンセリング・詳細な検査・整体）</p>
                 <div class="flex items-baseline justify-center gap-2">
                     <span class="text-xs text-slate-300 line-through">通常 13,200円</span>
                     <span class="text-brand-green font-bold text-sm">→ 初回限定</span>
@@ -1076,3 +1068,4 @@
     </script>
 </body>
 </html>
+```
